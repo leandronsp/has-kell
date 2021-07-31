@@ -3,24 +3,16 @@ import Test.HUnit
 import Data.List
 import Data.Tuple
 
-testListSize         = TestCase $ assertEqual "test listSize" (length [42, 13, 22]) 3
-testSortList         = TestCase $ assertEqual "test sortList" (sort [42, 13, 22]) [13, 22, 42]
-testSortListOfStr    = TestCase $ assertEqual "test sortListOfStr" (sort "leandro") "adelnor"
-testHeadOfLinkedList = TestCase $ assertEqual "test headOfLinkedList" (head [1, 2, 3]) 1
-testTailOfLinkedList = TestCase $ assertEqual "test tailOfLinkedList" (tail [1, 2, 3]) [2, 3]
-testConsSugar        = TestCase $ assertEqual "test consSugar" ("a" : "b" : []) ["a", "b"]
-testConsSugarJoin    = TestCase $ assertEqual "test consSugarJoin" (1 : [2, 3]) [1, 2, 3]
-testCharsList        = TestCase $ assertEqual "test charsList" ('a' : 'b' : []) "ab"
-testFirstOfTuple     = TestCase $ assertEqual "test firstOfTuple" (fst (42, "leandro")) 42
+testLists = TestCase $
+  do
+    assertEqual "listSize" (length [42, 13, 22]) 3
+    assertEqual "sortList" (sort [42, 13, 22]) [13, 22, 42]
+    assertEqual "sortListOfStr" (sort "leandro") "adelnor"
+    assertEqual "headOfLinkedList" (head [1, 2, 3]) 1
+    assertEqual "tailOfLinkedList" (tail [1, 2, 3]) [2, 3]
+    assertEqual "consSugar" ("a" : "b" : []) ["a", "b"]
+    assertEqual "consSugarJoin" (1 : [2, 3]) [1, 2, 3]
+    assertEqual "charsList" ('a' : 'b' : []) "ab"
+    assertEqual "firstOfTuple" (fst (42, "leandro")) 42
 
-tests = TestList [
-          TestLabel "testListSize" testListSize,
-          TestLabel "testSortList" testSortList,
-          TestLabel "testSortListOfStr" testSortListOfStr,
-          TestLabel "testHeadOfLinkedList" testHeadOfLinkedList,
-          TestLabel "testTailOfLinkedList" testTailOfLinkedList,
-          TestLabel "testConsSugar" testConsSugar,
-          TestLabel "testConsSugarJoin" testConsSugarJoin,
-          TestLabel "testCharsList" testCharsList,
-          TestLabel "testFirstOfTuple" testFirstOfTuple
-        ]
+tests = TestList [TestLabel "testLists" testLists]

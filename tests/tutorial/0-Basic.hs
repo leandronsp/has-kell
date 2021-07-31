@@ -1,13 +1,10 @@
 import Test.HUnit
 
-testBasicSum = TestCase $ assertEqual "test basicSum" (1 + 1) 2
-testBasicStr = TestCase $ assertEqual "test basicStr" "leandro" "leandro"
-testDivisionReturnsInteger = TestCase $ assertEqual "test divisionReturnsInteger" (10 / 2) 5
-testDivisionReturnsFractional = TestCase $ assertEqual "test divisionReturnsFractional" (10 / 2) 5.0
+testBasic = TestCase $
+  do
+    assertEqual "basicSum" (1 + 1) 2
+    assertEqual "basicStr" "leandro" "leandro"
+    assertEqual "divisionReturnsInteger" (10 / 2) 5
+    assertEqual "divisionReturnsFractionalToo" (10 / 2) 5.0
 
-tests = TestList [
-          TestLabel "testBasicSum" testBasicSum,
-          TestLabel "testBasicStr" testBasicStr,
-          TestLabel "testDivisionReturnsInteger" testDivisionReturnsInteger,
-          TestLabel "testDivisionReturnsFractional" testDivisionReturnsFractional
-        ]
+tests = TestList [TestLabel "testBasic" testBasic ]
