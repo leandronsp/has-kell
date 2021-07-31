@@ -15,4 +15,5 @@ run.tests:
 		echo "----Basic----" && ghci tests/tutorial/0-Basic.hs -e "runTestTT tests" && \
 		echo "----Lists----" && ghci tests/tutorial/1-Lists.hs -e "runTestTT tests" && \
 		echo "----Variables----" && ghci tests/tutorial/2-Variables.hs -e "runTestTT tests" && \
-		echo "----Functions----" && ghci tests/tutorial/3-Functions.hs -e "runTestTT tests"'
+		echo "----Functions----" && ghci tests/tutorial/3-Functions.hs -e "runTestTT tests" && \
+		echo "----PatternMatching----" && ghci tests/tutorial/4-PatternMatching.hs -e "runTestTT tests"'
