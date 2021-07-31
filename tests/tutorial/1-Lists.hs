@@ -9,6 +9,7 @@ testSortListOfStr    = TestCase $ assertEqual "test sortListOfStr" (sort "leandr
 testHeadOfLinkedList = TestCase $ assertEqual "test headOfLinkedList" (head [1, 2, 3]) 1
 testTailOfLinkedList = TestCase $ assertEqual "test tailOfLinkedList" (tail [1, 2, 3]) [2, 3]
 testConsSugar        = TestCase $ assertEqual "test consSugar" ("a" : "b" : []) ["a", "b"]
+testConsSugarJoin    = TestCase $ assertEqual "test consSugarJoin" (1 : [2, 3]) [1, 2, 3]
 testCharsList        = TestCase $ assertEqual "test charsList" ('a' : 'b' : []) "ab"
 testFirstOfTuple     = TestCase $ assertEqual "test firstOfTuple" (fst (42, "leandro")) 42
 
@@ -19,6 +20,7 @@ tests = TestList [
           TestLabel "testHeadOfLinkedList" testHeadOfLinkedList,
           TestLabel "testTailOfLinkedList" testTailOfLinkedList,
           TestLabel "testConsSugar" testConsSugar,
+          TestLabel "testConsSugarJoin" testConsSugarJoin,
           TestLabel "testCharsList" testCharsList,
           TestLabel "testFirstOfTuple" testFirstOfTuple
         ]

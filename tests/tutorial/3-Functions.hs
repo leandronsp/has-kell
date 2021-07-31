@@ -1,16 +1,9 @@
 import Test.HUnit
 
-testBindVariable = TestCase $
-  do
-    let x = 4
-    assertEqual "test x = 4" x 4
-
-testExpressionAndBody = TestCase $
-  do
-    let result = let y = 4 in y * y
-    assertEqual "test result = 16" result 16
+testMapFunction = TestCase $ assertEqual "test mapFunction" (map (+1) [1..5]) [2, 3, 4, 5, 6]
+testFilterFunction = TestCase $ assertEqual "test filterFunction" (filter (>5) [3, 10, 7, 5, 6, 1]) [10, 7, 6]
 
 tests = TestList [
-          TestLabel "testBindVariable" testBindVariable,
-          TestLabel "testExpressionAndBody" testExpressionAndBody
+          TestLabel "testMapFunction" testMapFunction,
+          TestLabel "testFilterFunction" testFilterFunction
         ]
