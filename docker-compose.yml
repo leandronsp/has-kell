@@ -5,4 +5,8 @@ services:
     image: haskell
     volumes:
       - ./:/app
+      - cabalCache:/root/.cabal/
     working_dir: /app
+
+volumes:
+  cabalCache:
