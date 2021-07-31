@@ -12,6 +12,7 @@ setup.tests:
 
 run.tests:
 	@docker-compose run app bash -c 'cabal install --lib HUnit && \
-		echo "----Basic----" && ghci tests/tutorial/Basic.hs -e "runTestTT tests" && \
-		echo "----Lists----" && ghci tests/tutorial/Lists.hs -e "runTestTT tests" && \
-		echo "----Variables----" && ghci tests/tutorial/Variables.hs -e "runTestTT tests"'
+		echo "----Basic----" && ghci tests/tutorial/0-Basic.hs -e "runTestTT tests" && \
+		echo "----Lists----" && ghci tests/tutorial/1-Lists.hs -e "runTestTT tests" && \
+		echo "----Variables----" && ghci tests/tutorial/2-Variables.hs -e "runTestTT tests" && \
+		echo "----Functions----" && ghci tests/tutorial/3-Functions.hs -e "runTestTT tests"'
